@@ -18,23 +18,7 @@ public class DynamoDBConfiguration {
     }
 
     private AmazonDynamoDB buildAmazonDynamoDB() {
-        return AmazonDynamoDBClientBuilder
-                .standard()
-                .withEndpointConfiguration(
-                        new AwsClientBuilder.EndpointConfiguration(
-                                "dynamodb.us-west-1.amazonaws.com",
-                                "us-west-1"
-                        )
-                )
-                .withCredentials(
-                        new AWSStaticCredentialsProvider(
-                                new BasicAWSCredentials(
-                                        "AKIAXGOYIISYVXK3CGJS",
-                                        "38e/Je6o7D0qMpSxb/aSzVEE1bQR2fkxi/lLmike"
-                                )
-                        )
-                )
-                .build();
+        return AmazonDynamoDBClientBuilder.defaultClient();
     }
 
 }
